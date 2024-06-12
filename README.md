@@ -21,8 +21,10 @@ CREATE TABLE public.inscripciones (
 	idmateria int4 NULL,
 	ciclo varchar(50) NULL,
 	año int4 NULL,
-	fechainscripcion date NULL,
+	fechainscripcion date NULL
+ ,
 	CONSTRAINT inscripciones_pkey PRIMARY KEY (id),
 	CONSTRAINT inscripciones_alumno_id_fkey FOREIGN KEY (idalumno) REFERENCES public.alumno(id),
 	CONSTRAINT inscripciones_materia_id_fkey FOREIGN KEY (idmateria) REFERENCES public.materia(id)
 );
+docker-compose down --rmi all && docker system prune -af --volumes && docker-compose up --build
